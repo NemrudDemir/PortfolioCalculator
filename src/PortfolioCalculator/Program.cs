@@ -36,7 +36,6 @@ namespace PortfolioCalculator
                     var date = DateTime.Parse(input[0]);
                     var investorId = input[1];
 
-                    /*code*/
                     var result = Calculate(date, investorId);
                     Console.WriteLine($"{result:N2} Euro");
                     line = Console.ReadLine();
@@ -49,6 +48,7 @@ namespace PortfolioCalculator
             }
         }
 
+        //TODO Auslagern!
         static decimal Calculate(DateTime date, string investorId)
         {
             var investments = GetInvestments().Where(i => i.InvestorId == investorId).ToArray();
